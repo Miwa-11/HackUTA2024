@@ -1,0 +1,109 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh; 
+    background-color:hsla(0,0%,100%,1);
+    background-image:
+    radial-gradient(at 74% 0%, hsla(251,81%,85%,1) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, hsla(359,100%,50%,1) 0px, transparent 50%),
+    radial-gradient(at 4% 39%, hsla(20,77%,85%,1) 0px, transparent 50%),
+    radial-gradient(at 100% 68%, hsla(158,16%,67%,1) 0px, transparent 50%),
+    radial-gradient(at 0% 99%, hsla(315,38%,78%,1) 0px, transparent 50%),
+    radial-gradient(at 79% 100%, hsla(330,64%,75%,1) 0px, transparent 50%),
+    radial-gradient(at 0% 0%, hsla(204,50%,75%,1) 0px, transparent 50%);
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2.5em;
+    margin-top: 5%;
+    margin-bottom: 1%;
+    animation: glowing 1.5s infinite alternate; 
+    color: rgb(58, 58, 58);
+    font-family: sans-serif;
+}
+
+#video-container {
+    position: relative;
+    width: 540px;
+    height: 300px;
+    overflow: hidden;
+    background-image: radial-gradient(circle 77px, rgb(255, 147, 147), rgb(255, 255, 255) 70%);
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+#video {
+    width: 100%;
+    height: auto;
+    color: rgba(255, 255, 255, 0.8);
+    background-color: transparent;
+    max-width: 640px;
+    max-height: 480px;
+    
+}
+
+#play-button {
+    width: 77px;
+    height: 79px;
+    border: none;
+    border-radius: 50%; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5em;
+    color: rgb(58, 58, 58);
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    transition: background-color 0.3s ease; 
+}
+
+#play-button:hover {
+    background-color: rgb(255, 206, 206);
+}
+
+
+#caption-container {
+    position: relative; /* キャプションボックスの親要素に relative を設定 */
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: block;
+    width: 100%;
+    max-width: 600px;
+    margin-top: 35px;
+    text-align: center;
+    z-index: 1; /* キャプションを前面に */
+    font-size: 1.2em; /* フォントサイズを調整 */
+    color: rgb(65, 65, 65); 
+    font-family: sans-serif;
+}
+
+
+
+
+.caption-box {
+    position: relative;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5); /* シャドウを強くする */
+    z-index: 1; /* 前面に表示 */
+    transform: translateY(-10px); /* ボックスを上に移動 */
+    font-family: sans-serif;
+}
+
