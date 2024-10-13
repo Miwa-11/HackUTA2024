@@ -18,41 +18,40 @@ function startRecording(stream) {
     mediaRecorder.onstop = () => {
         const blob = new Blob(recordedChunks, { type: 'video/webm' });
         const url = URL.createObjectURL(blob);
-        console.log('録画が完了しました:', url);
+        console.log('Completed record', url);
         
-        // ビデオ要素をリセット
-        video.srcObject = null; // ビデオストリームをクリア
-        recordedChunks = []; // チャンクをリセット
+       
+        video.srcObject = null; 
+        recordedChunks = []; 
     };
 
     mediaRecorder.start();
 }
 
-// 録画停止関数
 function stopRecording() {
     if (mediaRecorder && mediaRecorder.state === 'recording') {
         mediaRecorder.stop();
     }
 }
 
-// 再生ボタンをクリックしたときの処理
+
 playButton.addEventListener('click', async () => {
     try {
         const stream = await navigator.mediaDevices.getUserMedia({ video: true, audio: true });
         video.srcObject = stream;
         startRecording(stream);
         
-        // 再生ボタンを非表示にする
+     
         playButton.style.display = 'none';
     } catch (err) {
-        console.error('エラーが発生しました:', err);
+        console.error('Error:', err);
     }
 });
 
-// 録画停止ボタンをクリックしたときの処理
+
 stopButton.addEventListener('click', stopRecording);
 
-// エンターキーを押したときに録画を停止する処理
+
 document.addEventListener('keydown', (event) => {
     if (event.key === 'Enter') {
         stopRecording();
