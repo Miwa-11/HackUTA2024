@@ -4,7 +4,7 @@ const video = document.getElementById('video');
 const playButton = document.getElementById('play-button');
 const stopButton = document.getElementById('stop-button');
 
-// 録画開始関数
+
 function startRecording(stream) {
     const options = { mimeType: 'video/webm; codecs=vp9' };
     mediaRecorder = new MediaRecorder(stream, options);
